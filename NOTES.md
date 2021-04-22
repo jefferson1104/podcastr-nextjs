@@ -159,3 +159,35 @@ export async function getStaticProps() {
   }
 }
 ```
+
+## Trabalhando com o Image do nextJS
+Se voce tem imagens externas no projeto existe uma funcionalidade fantastica no nextJS, estamos falando do Image, com esse recurso temos mais performance, para utilzar voce primeiro tem que criar um arquivo de configuração nao raiz do seu projeto, no exemplo baixo vamos mostrar como criar este arquivo mas lembre-se que a url do dominio é de acordo com o dominio que vem a sua imagem.
+
+**_next.config.js_**
+```javascript
+module.exports = {
+  images: {
+    domains: ['storage.googleapis.com'],
+  }
+}
+```
+
+Exemplo de um arquivo com chamada da imagem:
+**_src/pages/index.tsx_**
+```javascript
+import Image from 'next/image';
+
+export default function Home() {
+  return (
+    <div>
+      <Image 
+        width={192} 
+        height={192} 
+        src="https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/funcional.jpg"
+        alt="imagem teste" 
+        objectFit="cover"
+      />
+    </div>
+  )
+}
+```
