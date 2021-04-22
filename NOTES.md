@@ -139,10 +139,11 @@ export async function getServerSideProps() {
 EXEMPLO DE UMA CHAMDA DE API UTILIZANDO O MODELO SSG: getStaticProps()
 ```javascript
 export default function Home(props) {
-  console.log(props.episodes)
-
   return (
-    <h1>Index</h1>
+    <div>
+      <h1>Index</h1>
+      <p>{JSON.stringify(props.episodes)}
+    </div>
   )
 }
 
