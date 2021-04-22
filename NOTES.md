@@ -53,7 +53,7 @@ $ yarn add sass
 _**OBS**: Ao instalar o sass, neste projeto vamos utilizar as estilizações globais com o sass, para isso renomeie o arquivo **"global.css"** para **"global.scss"** tambem altere a extensão na importação do seu arquivo **"_app.tsx"**_
 
 
-## Configurando document do NextJS
+## Configurando Document do NextJS
 Criamos um arquivo chamado **_document.tsx** para nele guardar todas as informaçoes do projeto que nao queremos que seja recarregada do zero a todo momento, nele configuramos todo o html do nosso projeto.
 
 Veja um exemplo onde configuramos as fontes do projeto:
@@ -81,3 +81,80 @@ export default class MyDocument extends Document {
 
 ``` 
 
+## Trabalhando com datas utilizando o date-fns
+Para trabalhar com datas eu gosto de utilizar o date-fns, nesse projeto instalamos essa dependencia executando:
+```bash
+$ yarn add date-fns
+```
+
+Veja um exemplo de codigo de como utilizar o date-fns, nesse exemplo queremos um output parcido "Qui, 8 Abril" exemplo:
+```javascript
+import format from 'date-fns/format';
+import ptBR from 'date-fns/locale/pt-BR';
+
+export function Header() {
+  const currentDate = format(new Date(), 'EEEEEEE, d MMMM', {locale: ptBR});
+
+  return (
+    <div>
+      <p>Trabalhando com data</p>
+
+      <span>{currentDate}</span>
+    </div>
+  );
+}
+``` 
+Saiba mais acessando a documentaçao do date-fns: https://date-fns.org/docs/Getting-Started
+
+
+## Consumindo API's
+Existem 3 maneiras legais de consumir uma api no nextjs, porem so vou apresentar as 2 principais, explicando sua diferença e mostrando exemplos.
+
+**SSR: Server Side Rendering*, neste modelo consumimos os dados de uma api e sem a necessaidad do javascript no client conseguimos renderizar suas informações, pois ela é renderizada pelo servidor node do nextjs, com isso nao perdemos informações e temos resultados muito melhores na indexação dos motores de buscas como google, bing e etc, um ponto importante é lembrar que este modelo é executado toda vez que alguem acessa a pagina do qual é necessario fazer essa chamada na api.
+
+EXEMPLO DE UMA CHAMDA DE API UTILIZANDO O MODELO SSR: getServerSideProps()
+```javascript
+export default function Home(props) {
+  console.log(props.episodes)
+
+  return (
+    <h1>Index</h1>
+  )
+}
+
+export async function getServerSideProps() {
+  const response = await fetch('http://localhost:3333/episodes')
+  const data = await response.json()
+
+  return {
+    props: {
+      episodes: data,
+    }
+  }
+}
+```
+
+**SSG: Static Site Generation*, este modelo tem as mesmas funcionalidades do modelo acima (SSR) com um grande diferecial na performance, neste modelo determinamos com qual frequencia essa chamada na api ira funcionar, imagine um blog com muitas noticias e muitos usuarios acessando simultaneamente, todo acesso iria gerar uma chamada na api, imagine que tenhamos 1 milhao de chamadas na api sem a necessidade pois o conteudo sera o mesmo, entao utilizando este modelo podemos programar por exemplo para que uma pagina statica seja montada em um determinado intervalo de tempo atualizando suas informações, fazendo assim que menos requisições ocorram na api.
+
+EXEMPLO DE UMA CHAMDA DE API UTILIZANDO O MODELO SSG: getStaticProps()
+```javascript
+export default function Home(props) {
+  console.log(props.episodes)
+
+  return (
+    <h1>Index</h1>
+  )
+}
+
+export async function getStaticProps() {
+  const response = await fetch('http://localhost:3333/episodes')
+  const data = await response.json()
+
+  return {
+    props: {
+      episodes: data,
+    },
+    revalidate: 60 * 60 * 8,
+  }
+}
+```
