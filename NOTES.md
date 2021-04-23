@@ -191,3 +191,40 @@ export default function Home() {
   )
 }
 ```
+
+
+## Roteamento de paginas no nextJS
+O nextJS trouxe muita praticidade no quesito roteamento, é muito simples fazer isso nesse framework, basta voce criar o arquivo responsavel pela rota dentro de **_src/pages_** e tudo acontece, o nome desse arquivo vai formar a rota ou seja sera a URL isso acontece devido ao "file system routing" voce pode saber mais sobre isso acessando https://nextjs.org/docs/routing/introduction
+<br>
+
+**Criando uma rota simples**: Se dentro de "src/pages" criarmos um arquivo chamado "episodes.tsx" (a extensao é devido a estarmos trabalhando com typescript poderia ser "episode.js") para acessar essa pagina de episodios, teriamos que navegar "dominio.com/episodes" e tudo iria funcionar normalmente.
+<br>
+
+**Criando uma rota dinamica (parametros)**: Vamos supor que queira ir em um episodio especifico, no caso de uso teria inumeros episódios, seriam URL diferentes, por exemplo "dominio.com/episodios/bla-bla-bla" ATENÇÃO AGORA QUE FICA INTERESSANTE, ao invés de utilizarmos um "query params" poderiamos utilizar uma flag que vai receber esse parametro de identificar qual episodio, para isso criamos uma pasta em **_src/pages_** como nome de "episodes" e dentro dela o arquivo que o nome venha ser um colchetes e dentro dos colchetes um "slug" ou "id" ou qualquer outro nome, exemplo **[slug].tsx, [episode].tsx ou [id].tsx**, a nomenclatura nao importa, é apenas um nome dado para usar como parametro, veja o exemplo abaixo:
+
+**_src/pages/episodes/[slug].tsx_**
+```javascript
+import { useRouter } from 'next/router';
+
+export default function Episode() {
+  const router = useRouter();
+
+  return (
+    <h1>{router.query.slug}</h1>
+  )
+}
+
+// Para acessar: http://localhost:3000/episodes/bla-bla-bla
+``` 
+**OBS**: Note a URL para acessar essa rota, e que tudo que vier como parametro da pagina, ira vir dentro do slug como usamos de exemplo e utilizando o useRouter do nextJS recebemos esse parametro.
+
+
+
+
+
+
+
+
+
+
+
