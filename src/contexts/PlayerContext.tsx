@@ -20,6 +20,8 @@ type PlayerContextData = {
   togglePlay: () => void;
   playNext: () => void;
   playPrevious: () => void;
+  hasNext: boolean;
+  hasPrevious: boolean;
 };
 
 export const PlayerContext = createContext({} as PlayerContextData);
@@ -79,6 +81,8 @@ export function PlayerContextProvider({ children }: PlayerContextProviderProps) 
         togglePlay, 
         playNext,
         playPrevious,
+        hasNext,
+        hasPrevious,
         setPlayingState 
       }}
     >
