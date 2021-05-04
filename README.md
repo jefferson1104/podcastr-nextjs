@@ -9,7 +9,7 @@
 
 
 ### :memo: Sobre o projeto
-O Podcastr é uma plataforma para voce ouvir seu episódio de podcast preferido, o projeto foi desenvolvido com a tecnologia nextJS um maravilhoso framework para a biblioteca reactJS, também foi desenvolvido com typescript, utilizamos sass como pré-processador de css e uma fakeApi para consumir os conteudos como se fosse dados vindos de uma API. Nessa plataforma foi utilizado diversos conceitos aplicamos o uso de server side rendering, static site generation, contextApi, o uso da tag de html "<audio>" e toda a interação que é possivel ser feita com ela, vale a pena estudar esse projeto e aplicar ainda mais funcionalidades!
+O Podcastr é uma plataforma para voce ouvir seu episódio de podcast preferido, o projeto foi desenvolvido com a tecnologia nextJS um maravilhoso framework para a biblioteca reactJS, também foi desenvolvido com typescript, utilizamos sass como pré-processador de css e uma fakeApi para consumir os conteudos como se fosse dados vindos de uma API. Nessa plataforma foi utilizado diversos conceitos aplicamos o uso de server side rendering, static site generation, contextApi, o uso da tag `<audio>` de html e toda a interação que é possivel ser feita com ela, vale a pena estudar esse projeto e aplicar ainda mais funcionalidades!
 
 ### :rocket: Principais tecnologias 
 <ul>
