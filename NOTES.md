@@ -218,13 +218,3 @@ export default function Episode() {
 ``` 
 **OBS**: Note a URL para acessar essa rota, e que tudo que vier como parametro da pagina, ira vir dentro do slug como usamos de exemplo e utilizando o useRouter do nextJS recebemos esse parametro.
 
-
-
-
-
-
-
-
-
-
-
