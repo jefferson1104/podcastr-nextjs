@@ -1,18 +1,16 @@
-<h2 align="center">
+<div align="center">
   <img alt="Moveit" src="./public/logo.svg">
-</h2>
+  <br />
+  <p align="center">
+    <img alt="technology" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+    <img alt="technology" src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">
+  </p>
+</div>
 
-<p align="center">
-  <img alt="technology" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
-  <img alt="technology" src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">
-</p>
+# :memo: About this project
+Podcastr is a platform for you to listen to your favorite podcast episode, the project was developed with nextJS technology a wonderful framework for the reactJS library, it was also developed with typescript, we use sass as a css preprocessor and a fakeApi to consume the content as if it were data coming from an API. In this platform, several concepts were used, we applied the use of server side rendering, static site generation, contextApi, the use of the `<audio>` html tag and all the interaction that is possible to be done with it, it is worth studying this project and apply even more features!
 
-### :memo: Sobre o projeto
-
-O Podcastr é uma plataforma para voce ouvir seu episódio de podcast preferido, o projeto foi desenvolvido com a tecnologia nextJS um maravilhoso framework para a biblioteca reactJS, também foi desenvolvido com typescript, utilizamos sass como pré-processador de css e uma fakeApi para consumir os conteudos como se fosse dados vindos de uma API. Nessa plataforma foi utilizado diversos conceitos aplicamos o uso de server side rendering, static site generation, contextApi, o uso da tag `<audio>` de html e toda a interação que é possivel ser feita com ela, vale a pena estudar esse projeto e aplicar ainda mais funcionalidades!
-
-### :rocket: Principais tecnologias
-
+# :rocket: Main technologies
 <ul>
   <li><a target="_blank" href="https://nextjs.org/docs/getting-started">NextJS</a></li>
   <li><a target="_blank" href="https://www.typescriptlang.org/docs/">Typescript</a></li>
@@ -22,35 +20,32 @@ O Podcastr é uma plataforma para voce ouvir seu episódio de podcast preferido,
   <li><a target="_blank" href="https://github.com/axios/axios">axios</a></li>
 </ul>
 
-### :cyclone: Como executar este projeto localmente?
-
+# :cyclone: How to run this project
 ```bash
-# Clone este repositório
-$ git clone https://github.com/jefferson1104/podcastr-nextJS.git
+# Clone this repository
+$ git clone https://github.com/jefferson1104/podcastr-nextjs.git
 
-# Acesse a paste do projeto via terminal
+# Access directory project
 $ cd podcastr-nextjs
+$ code . 
 
-# Instale as dependencias do projeto utilizando o gerenciado de pacotes yarn
+# Install dependencies
 $ yarn
 
-# Execute o servidor fake
+# Run fake server (API)
 $ yarn server
 
-# Execute o projeto em modo de desenvolvimento
+# Run this application
 $ yarn dev
-
 ```
 
-### :bulb: Dicas de melhorias
+# :bulb: Improvement Tips
+- Make the project responsive
+- Create a dark theme
+- Create a PWA version, package tip to use [here](https://github.com/shadowwalker/next-pwa)
+- Use Electron and turn it into a desktop app
 
-- Deixar o projeto responsivo
-- Criar um tema dark
-- Criar uma versão PWA, dica de pacote para usar [aqui](https://github.com/shadowwalker/next-pwa)
-- Utilizar Electron e transformar em um app desktop
-
-### 🎨 Screenshots
-
+# 🎨 Screenshots
 <p >
   <img width=500 src="./public/screenshots/screenshot-01.png">
   <img width=500 src="./public/screenshots/screenshot-02.png">
